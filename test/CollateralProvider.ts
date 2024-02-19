@@ -147,8 +147,7 @@ describe("Collateral Provider", function () {
         await mockProvider.handleWithdraw(poolId, amount)
         // Project owner withdraw half main coin amount before time
         await lockDealNFT
-          .connect(projectOwner)
-          ['safeTransferFrom(address,address,uint256)'](projectOwner.address, lockDealNFT.address, poolId)
+          .connect(projectOwner)['safeTransferFrom(address,address,uint256)'](projectOwner.address, lockDealNFT.address, poolId)
         expect((await lockDealNFT.getData(poolId + 1)).params[0]).to.deep.equal(0)
         expect((await lockDealNFT.getData(poolId + 2)).params[0]).to.deep.equal(0)
         expect((await lockDealNFT.getData(poolId + 3)).params[0]).to.deep.equal(amount / 2)
@@ -157,8 +156,7 @@ describe("Collateral Provider", function () {
       it('should withdraw tokens before time', async () => {
         await mockProvider.handleRefund(poolId, projectOwner.address, amount)
         await lockDealNFT
-          .connect(projectOwner)
-          ['safeTransferFrom(address,address,uint256)'](projectOwner.address, lockDealNFT.address, poolId)
+          .connect(projectOwner)['safeTransferFrom(address,address,uint256)'](projectOwner.address, lockDealNFT.address, poolId)
         expect((await lockDealNFT.getData(poolId + 1)).params[0]).to.deep.equal(0)
         expect((await lockDealNFT.getData(poolId + 2)).params[0]).to.deep.equal(0)
         expect((await lockDealNFT.getData(poolId + 3)).params[0]).to.deep.equal(amount / 2)
@@ -168,8 +166,7 @@ describe("Collateral Provider", function () {
         await mockProvider.handleWithdraw(poolId, amount)
         await mockProvider.handleRefund(poolId, projectOwner.address, amount)
         await lockDealNFT
-          .connect(projectOwner)
-          ['safeTransferFrom(address,address,uint256)'](projectOwner.address, lockDealNFT.address, poolId)
+          .connect(projectOwner)['safeTransferFrom(address,address,uint256)'](projectOwner.address, lockDealNFT.address, poolId)
         expect((await lockDealNFT.getData(poolId + 1)).params[0]).to.deep.equal(0)
         expect((await lockDealNFT.getData(poolId + 2)).params[0]).to.deep.equal(0)
         expect((await lockDealNFT.getData(poolId + 3)).params[0]).to.deep.equal(0)
@@ -178,8 +175,7 @@ describe("Collateral Provider", function () {
       it('should transfer all pools to NFT after finish time', async () => {
         await time.setNextBlockTimestamp(finishTime + 1)
         await lockDealNFT
-          .connect(projectOwner)
-          ['safeTransferFrom(address,address,uint256)'](projectOwner.address, lockDealNFT.address, poolId)
+          .connect(projectOwner)['safeTransferFrom(address,address,uint256)'](projectOwner.address, lockDealNFT.address, poolId)
         expect((await lockDealNFT.getData(poolId + 1)).params[0]).to.deep.equal(0)
         expect((await lockDealNFT.getData(poolId + 2)).params[0]).to.deep.equal(0)
         expect((await lockDealNFT.getData(poolId + 3)).params[0]).to.deep.equal(0)
@@ -223,8 +219,7 @@ describe("Collateral Provider", function () {
         const totalSupply = await lockDealNFT.totalSupply()
         const packedData = ethers.utils.defaultAbiCoder.encode(['uint256', 'address'], [halfRatio, projectOwner.address])
         await lockDealNFT
-          .connect(projectOwner)
-          ['safeTransferFrom(address,address,uint256,bytes)'](
+          .connect(projectOwner)['safeTransferFrom(address,address,uint256,bytes)'](
             projectOwner.address,
             lockDealNFT.address,
             poolId,
@@ -238,8 +233,7 @@ describe("Collateral Provider", function () {
         await time.setNextBlockTimestamp(finishTime + 1)
         const packedData = ethers.utils.defaultAbiCoder.encode(['uint256', 'address'], [halfRatio, projectOwner.address])
         const tx = await lockDealNFT
-          .connect(projectOwner)
-          ['safeTransferFrom(address,address,uint256,bytes)'](
+          .connect(projectOwner)['safeTransferFrom(address,address,uint256,bytes)'](
             projectOwner.address,
             lockDealNFT.address,
             poolId,
@@ -260,8 +254,7 @@ describe("Collateral Provider", function () {
         await mockProvider.handleWithdraw(poolId, amount)
         const packedData = ethers.utils.defaultAbiCoder.encode(['uint256', 'address'], [halfRatio, projectOwner.address])
         await lockDealNFT
-          .connect(projectOwner)
-          ['safeTransferFrom(address,address,uint256,bytes)'](
+          .connect(projectOwner)['safeTransferFrom(address,address,uint256,bytes)'](
             projectOwner.address,
             lockDealNFT.address,
             poolId,
@@ -279,8 +272,7 @@ describe("Collateral Provider", function () {
         await mockProvider.handleRefund(poolId, projectOwner.address, amount)
         const packedData = ethers.utils.defaultAbiCoder.encode(['uint256', 'address'], [halfRatio, projectOwner.address])
         await lockDealNFT
-          .connect(projectOwner)
-          ['safeTransferFrom(address,address,uint256,bytes)'](
+          .connect(projectOwner)['safeTransferFrom(address,address,uint256,bytes)'](
             projectOwner.address,
             lockDealNFT.address,
             poolId,
@@ -298,8 +290,7 @@ describe("Collateral Provider", function () {
         await time.setNextBlockTimestamp(finishTime + 1)
         const packedData = ethers.utils.defaultAbiCoder.encode(['uint256', 'address'], [halfRatio, projectOwner.address])
         await lockDealNFT
-          .connect(projectOwner)
-          ['safeTransferFrom(address,address,uint256,bytes)'](
+          .connect(projectOwner)['safeTransferFrom(address,address,uint256,bytes)'](
             projectOwner.address,
             lockDealNFT.address,
             poolId,
