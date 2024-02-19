@@ -3,7 +3,7 @@ import { CollateralProvider } from "../typechain-types"
 import { DealProvider } from "../typechain-types"
 import { LockDealNFT } from "../typechain-types"
 import { MockProvider } from "../typechain-types"
-import { deployed, token, MAX_RATIO, BUSD } from "lockdeal-nft/test/helper"
+import { deployed } from "@poolzfinance/poolz-helper-v2"
 import { time, mine } from "@nomicfoundation/hardhat-network-helpers"
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers"
 import { expect } from "chai"
@@ -24,8 +24,11 @@ describe("Collateral Provider", function () {
     let vaultId: BigNumber
     const signature: Bytes = ethers.utils.toUtf8Bytes("signature")
     const name: string = "CollateralProvider"
-    const halfRatio = MAX_RATIO.div(2)
+    const MAX_RATIO = ethers.utils.parseUnits("1", 21) // 100%
+    const halfRatio = ethers.utils.parseUnits("5", 20)
     const amount = 100000
+    const token = "0xCcf41440a137299CB6af95114cb043Ce4e28679A"
+    const BUSD = "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
 
     before(async () => {
         ;[receiver, projectOwner] = await ethers.getSigners()
