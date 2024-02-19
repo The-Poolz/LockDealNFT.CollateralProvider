@@ -1,4 +1,8 @@
 # CollateralProvider
+[![Build and Test](https://github.com/The-Poolz/LockDealNFT.CollateralProvider/actions/workflows/node.js.yml/badge.svg)](https://github.com/The-Poolz/LockDealNFT.CollateralProvider/actions/workflows/node.js.yml)
+[![codecov](https://codecov.io/gh/The-Poolz/LockDealNFT.CollateralProvider/branch/master/graph/badge.svg)](https://codecov.io/gh/The-Poolz/LockDealNFT.CollateralProvider)
+[![CodeFactor](https://www.codefactor.io/repository/github/the-poolz/LockDealNFT.CollateralProvider/badge)](https://www.codefactor.io/repository/github/the-poolz/LockDealNFT.CollateralProvider)
+
 **CollateralProvider** is a contract that enables the management of `tokens` and `main coins` for the **Project Owner**. 
 
 ## Pools
