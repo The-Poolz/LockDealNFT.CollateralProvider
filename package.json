@@ -1,6 +1,6 @@
 {
     "name": "@poolzfinance/collateral-provider",
-    "version": "1.0.0",
+    "version": "0.8.0",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -21,6 +21,6 @@
         "@ironblocks/firewall-consumer": "^1.0.5",
         "@openzeppelin/contracts": "^4.8.3",
         "@poolzfinance/poolz-helper-v2": "^2.3.5",
-        "lockdeal-nft": "^0.8.0"
+        "@poolzfinance/lockdeal-nft": "^0.8.0"
     }
 }
