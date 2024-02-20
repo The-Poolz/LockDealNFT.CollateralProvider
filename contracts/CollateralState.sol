@@ -3,8 +3,8 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
 import "@poolzfinance/poolz-helper-v2/contracts/interfaces/IInnerWithdraw.sol";
-import "lockdeal-nft/contracts/SimpleProviders/LockProvider/LockDealState.sol";
-import "lockdeal-nft/contracts/SimpleProviders/Provider/ProviderModifiers.sol";
+import "@poolzfinance/lockdeal-nft/contracts/SimpleProviders/LockProvider/LockDealState.sol";
+import "@poolzfinance/lockdeal-nft/contracts/SimpleProviders/Provider/ProviderModifiers.sol";
 import "./interfaces/FundsManager.sol";
 
 abstract contract CollateralState is IInnerWithdraw, FundsManager, IERC165, ProviderModifiers {
