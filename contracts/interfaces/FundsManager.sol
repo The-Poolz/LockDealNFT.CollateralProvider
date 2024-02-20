@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 import "@poolzfinance/poolz-helper-v2/contracts/interfaces/IProvider.sol";
-import "lockdeal-nft/contracts/SimpleProviders/LockProvider/LockDealState.sol";
+import "@poolzfinance/lockdeal-nft/contracts/SimpleProviders/LockProvider/LockDealState.sol";
 
 abstract contract FundsManager is LockDealState, IProvider {
     function handleWithdraw(uint256 poolId, uint256 tokenAmount) external virtual {}
