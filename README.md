@@ -5,6 +5,9 @@
 
 **CollateralProvider** is a contract that enables the management of `tokens` and `main coins` for the **Project Owner**. 
 
+### Audit report
+The audit report is available here: [Audit Report](https://docs.google.com/document/d/18XSwsKKbHpLCr4MQNZe8nZSWHnG6aExtb57R5uzQ3Us/edit?tab=t.0#heading=h.5uoc4mfz7mn4)
+
 ## Pools
 When registering a pool, three types of pools are created for refund purposes.
 
